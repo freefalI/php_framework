@@ -12,6 +12,9 @@ class Route
     public static function run()
     {
         $url = $_GET['url'];
+            if($url==""){
+            self::runDefaultController();
+            return;}
         $matched = null;
         $params = [];
         foreach (self::$routes as $pattern => $handler) {
@@ -25,12 +28,29 @@ class Route
             $pathToController = 'app/controllers/' . $matched[0] . ".php";
             require_once $pathToController;
             $controller = new $matched[0];
+            $middleware = $controller->getMiddleware();
+            foreach ($middleware as $m) {
+                require "app/middleware/$m.php";
+                $M =new $m;
+                if (! $M->handle()){
+                    self::redirectHome();
+                    return;
+                }
+            }
+            $controller = new $matched[0];
             $controller->{$matched[1]}($params);
         } else {
-            require "app/controllers/Main.php";
-            $controller = new Main;
-            $controller->index();
+            self::redirectHome();
         }
+    }
+
+    private static function runDefaultController(){
+        require "app/controllers/Main.php";
+        $controller = new Main;
+        $controller->index();
+    }
+    private static function redirectHome(){
+        header( 'Location: /' );
     }
 }
 

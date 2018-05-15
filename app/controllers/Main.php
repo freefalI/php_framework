@@ -1,6 +1,6 @@
 <?php
  
-class Main // extends Controller
+class Main  extends Controller
 {
     /* function __construct(){
           echo "This is the main controller!";

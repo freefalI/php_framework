@@ -1,7 +1,7 @@
 <?php
 
 
-class StudentController// extends Controller
+class StudentController extends Controller
 {
     public function student($params)
     {
