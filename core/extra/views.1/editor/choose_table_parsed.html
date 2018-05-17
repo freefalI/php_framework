@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin panel</title>
+  <?php  require "app/web/include.php"; ?>
+  
+
+</head>
+<body>
+
+  <h2>Choose table</h2>
+   <?php $tables = SQL::table('tables')->select()->execute(); ?>
+   <?php foreach ($tables as $table): ?>
+   <button  class="btn btn-primary"><?= $table['name'] ?></button>
+
+   <?php  endforeach; ?>
+</body>     

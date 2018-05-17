@@ -125,6 +125,7 @@ class Model
             if ($this->isNew)
                 throw new Exception("WARNING: An attempt to delete a nonexistent record in database\n");
             $this->builder->delete()->where($this->id_field . " = " . $this->attributes[$this->id_field])->execute();
+            $this->isNew=true;
             return $this;
         } catch (Exception $ex) {
             echo $ex->getMessage();

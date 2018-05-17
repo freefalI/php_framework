@@ -33,7 +33,7 @@ class Route
                 require "app/middleware/$m.php";
                 $M =new $m;
                 if (! $M->handle()){
-                    self::redirectHome();
+                    // self::redirectHome();
                     return;
                 }
             }

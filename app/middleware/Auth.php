@@ -12,8 +12,13 @@ class Auth extends Middleware
             return false;
         }
 
-        if ($_POST['password'] = 123 and $_POST['login'] == "abc") {
-            $_SESSION['admin'] = true;
+
+        $arr = SQL::table('admin')->select()->execute();
+        foreach ($arr as $key => $value) {
+            if ($value['login'] == $_POST['login']
+                and $value['password'] == $_POST['password']) {
+                $_SESSION['admin'] = true;
+            }
         }
 
         if (isset($_SESSION['admin']) and $_SESSION['admin']) {

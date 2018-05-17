@@ -15,4 +15,14 @@ class AdminController  extends Controller
        
         echo  output('editor/editor', []); 
     }
+    public function choose_table(){
+       
+        echo  output('editor/choose_table', []); 
+    }
+
+
 }
+// GET -select
+// POST — insert
+// PUT -update
+// DELETE — 

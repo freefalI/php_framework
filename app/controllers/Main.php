@@ -8,6 +8,6 @@ class Main  extends Controller
      }*/
 
     public function index(){
-        echo output("main/index");
+        echo output("main/content");
     }
 }

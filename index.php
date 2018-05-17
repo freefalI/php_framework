@@ -20,3 +20,10 @@ require "Student.php";
 
 
 Route::run();
+
+
+/*
+
+php or html
+structure of views
+*/
