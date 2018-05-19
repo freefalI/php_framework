@@ -12,14 +12,8 @@ class AdminController  extends Controller
 
 
     public function index(){
-       
-        echo  output('editor/editor', []); 
+        echo  output('admin/editor', []); 
     }
-    public function choose_table(){
-       
-        echo  output('editor/choose_table', []); 
-    }
-
 
 }
 // GET -select

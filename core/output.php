@@ -5,17 +5,17 @@ function output($templateName, $dataArr = [],$includeHeaderAndFooter=true)
 
     $fileName = "app/views/" . $templateName .".php";
     $fileNameOfParsed = "app/views/cashed/" . $templateName . ".php";
+   
 //parsing file
 //    $file = fopen($fileName, 'r');
 //    $text = fread($file, filesize($fileName));
 //    fclose($file);
 //    echo $text;
-   echo $content;
+
+
+//    echo $fileNameOfParsed;
 
     $content = file($fileName);
-    // echo "<--";
-    // var_dump($content);
-    // echo "-->";
     foreach ($content as &$string) {
 
         $string = str_replace('{{', '<?= ', $string);
@@ -33,7 +33,6 @@ function output($templateName, $dataArr = [],$includeHeaderAndFooter=true)
         }
     }
 
-//    var_dump($content);
 
     $content = implode('', $content);
     $file = fopen($fileNameOfParsed, 'w');

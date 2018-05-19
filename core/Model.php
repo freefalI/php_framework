@@ -1,6 +1,6 @@
 <?php
 //ORM
-
+//v1.5
 /**
  *
  * id is not autoincrement by default
@@ -10,8 +10,8 @@
  */
 class Model
 {
-    private $table;
-    private $id_field = 'id';
+    protected $table;
+    protected $id_field = 'id';
 //    private $isAutoInc = true;
     private $isNew;
     protected $attributes = [];
@@ -75,7 +75,7 @@ class Model
         $result = $this->builder->execute();
         $models = [];
         foreach ($result as $rec)
-            $models[] = new self($rec, false);
+            $models[] = new static($rec, false);
         return $models;
     }
 

@@ -1,0 +1,10 @@
+for ($i=1; $i<28; $i++) { 
+SQL::table('sneakers')->insert()->setValues([
+    'id'=>$i,
+    'id_brand'=>$i*2,
+    'model'=>'m'.$i,
+    'id_category'=>2,
+    'price'=>$i*1.5,
+    'img_path'=>'vendor/images/'.$i
+    ])->execute();
+}

@@ -31,7 +31,7 @@ class Student extends Model
 }
 
 //$arr = SQL::table('students')->select()->where('course = 2')->execute();print_r($arr);
-//$us = Student::select()->where('course = 2')->execute();// get returns array of objects
+// $us = Student::select()->where('course = 2')->execute();// get returns array of objects
 //
 //foreach ($us as $u) {
 //    echo 1 . "\n";
