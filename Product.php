@@ -2,5 +2,5 @@
 
 class Product extends Model
 {
-    public $table='sneakers';
+    
 }

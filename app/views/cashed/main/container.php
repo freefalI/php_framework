@@ -6,8 +6,9 @@
     <div class="container">
         <div class="row">
             <?php foreach ($products as $product): ?>
-            <div class="col col-sm-6  col-md-4 col-lg-3">
-            <img class ="iii" src="<?= $product->img_path;  ?>" alt="image"  >    
+            <div class="col col-sm-6  col-md-4 col-lg-3"> 
+            <img class ="iii" src="<?= $product->img_path; ?>" alt="image">   
+            <!-- <img class ="iii" src="vendor/images/1" alt="image"  >     -->
             <h3><?= "Adidas" . " " . $product->model ?></h3>
             <p>Lorem ipsum dolor..</p>
             <p><?= $product->price ?></p>
@@ -24,7 +25,6 @@
                 <p>Ut enim ad..</p>
             </div> -->
             <?php  endforeach; ?>
-            <button id="aaa">ZZZZZZZZZZZZ</button>
         </div>
     </div>
 

@@ -11,6 +11,7 @@ class SQL
     public $insert;
     public $update;
     public $delete;
+    public $join;
     public $params;
 
     public static function table($table)
@@ -77,6 +78,12 @@ class SQL
         return $this;
     }
 
+    public function join($params)
+    {
+        $this->join = $params;
+        return $this;
+    }
+
     public function setValues(...$params)
     {
         $this->params = $params;
@@ -86,12 +93,7 @@ class SQL
 
     public function execute()
     {
-        $res = QueryComposer::compose($this);
-        for ($i = 0; $i < count($res); $i++)
-            foreach ($res[$i] as $key => $value)
-                if (is_numeric($key))
-                    unset($res[$i][$key]);
-        return $res;
+        return QueryComposer::compose($this);
     }
 
 }

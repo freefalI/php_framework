@@ -33,7 +33,14 @@ class Database
         if ($debug_mode) {
           echo $sth->debugDumpParams();
         }
-        return $sth->fetchAll();
+        return  $sth->fetchAll(PDO::FETCH_ASSOC);
+ 
+        // for ($i = 0; $i < count($res); $i++)
+        //     foreach ($res[$i] as $key => $value)
+        //         if (is_numeric($key))
+        //             unset($res[$i][$key]);
+    
+        // return  $res;
     }
 }
 

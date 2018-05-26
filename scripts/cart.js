@@ -1,5 +1,6 @@
 var cart = {}; 
 (function(){
+    alert("'44'");
     var buttons = document.getElementsByClassName('add-to-cart');
     for (var i = 0; i < buttons.length; i++) 
     buttons[i].onclick = addToCart;

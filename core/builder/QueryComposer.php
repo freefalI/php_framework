@@ -46,7 +46,12 @@ class QueryComposer
             }
         else $query .= '* ';
         $query .= ' FROM `' . $q->table . '`';
-
+        // join 
+        if (isset($q->join)) {
+            foreach ($q->join as $table =>$cond) {
+                $query.= ' join ' . $table . ' ON ' . $cond;
+            }
+        }
         QueryComposer::build_where($q, $query, $args);
 
         if (isset($q->orderBy)) {
@@ -64,7 +69,7 @@ class QueryComposer
         if (isset($q->limit)) {
             $query .= "LIMIT $q->limit";
         }
-        return sql($query, $args);
+        return dsql($query, $args);
     }
 
     private static function buildInsert($q)
@@ -87,7 +92,7 @@ class QueryComposer
         else throw new Exception("Error: There is no parameters!");
         $query .= ') VALUES (';
         $query .= $str . ')';
-        return sql($query, $args);
+        return dsql($query, $args);
     }
 
     private static function buildUpdate($q)
@@ -105,7 +110,7 @@ class QueryComposer
             }
         else throw new Exception("Error: There is no parameters!");
         QueryComposer::build_where($q, $query, $args);
-        return sql($query, $args);
+        return dsql($query, $args);
     }
 
     private static function buildDelete($q)

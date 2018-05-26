@@ -16,8 +16,10 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
 <!-- <link href="font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+<!-- Our Custom CSS -->
 
-<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" >
+
+<link rel="stylesheet" type="text/css" href="styles/style.css" >
 
 </head>
 <body class="container">
@@ -55,7 +57,7 @@
                     <a class="nav-link" href="/cart">Cart</a>
                 </li>
                 <li class="nav-item nav-right nav-item-right">
-                        <a class="nav-link" href="/admin">Admin</a>
+                        <a class="nav-link" href="/browse">Admin</a>
                 </li>
             </ul>
             <button type="submit" class="btn btn-primary">Cart</button>

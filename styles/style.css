@@ -1,0 +1,45 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"); 
+
+.iii{
+    width:100px;
+    height:70px;
+}
+
+.footer{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+.col{
+    border: solid 1px black;
+}
+
+
+
+.login-body{
+    background-color: rgb(224, 232, 241)
+}
+.login-wrapper{
+    width: 400px;
+}
+.login-wrapper .form-group label{
+    font-size: 25px;
+}  
+
+
+.exit-from-admin-panel{
+    /* position: absolute; */
+float: right;
+position: relative;
+top:-50px;
+
+/* margin-right: 30px; */
+}
+
+.select-table-to-edit{
+    clear: both;
+    width: 300px;
+}
+
+.select-items {
+    width: 300px;
+}

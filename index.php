@@ -17,20 +17,19 @@ require "app/web/routes.php";
 //models
 require "Student.php";
 require "Product.php";
-require "ProductInCart.php";
-
+// require "ProductInCart.php";
+require "Brand.php";
+require "Category.php";
 
 
 Route::run();
 
+
+    // echo json_encode($newProduct);
+
 // for ($i=1; $i<28; $i++) { 
-// SQL::table('sneakers')->insert()->setValues([
-//     'id'=>$i,
-//     'id_brand'=>$i*2,
-//     'model'=>'m'.$i,
-//     'id_category'=>2,
-//     'price'=>$i*1.5,
-//     'img_path'=>'vendor/images/'.$i.'.jpg'
+// SQL::table('products')->update()->where("id=" . $i)->setValues([
+//     'img_path'=>"vendor/images/" .$i . ".jpg"
 //     ])->execute();
 // }
 

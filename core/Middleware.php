@@ -1,12 +1,5 @@
 <?php
-class Middleware{
+interface Middleware{
 
-function handle(){
-
-
-    return true;
-    return false;
-}
-function run(){}
-
+function handle();
 }
