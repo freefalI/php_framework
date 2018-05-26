@@ -18,3 +18,5 @@ Route::get('edit/{id}','AdminController@edit');
 Route::get('add','AdminController@add');
 Route::get('delete/{id}','AdminController@delete');
 Route::get('update/{id}','AdminController@update');
+Route::get('insert','AdminController@insert');
+

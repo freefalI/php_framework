@@ -62,8 +62,7 @@
                   <td><?= $product->img_path ?></td>
                   <td><a href="/delete/<?= $product->id ?>" onclick="return confirm('Продукт будет удален из бд. Удалить запись?')"><i class="fas fa-times"></i></a></td>
                 </tr>
-                <?php  endforeach; ?>
-                
+                <?php endforeach; ?>
               </tbody>
             </table>
             <br><br>

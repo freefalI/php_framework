@@ -34,16 +34,18 @@ class AdminController  extends Controller
             'brands'=> $brands],0); 
     }
     public function add(){
+        // $maxId = sql("SELECT MAX(ID) as maxId FROM PRODUCTS ");
+        // $_POST['id'] =$maxId[0]['maxId']+1;
         $categories = Category::select()->execute();
         $brands = Brand::select()->execute();
-        echo  output('admin/add', ['categories'=>$categories,'brands'=> $brands],0); 
+        echo  output('admin/add', ['categories'=>$categories,'brands'=> $brands,'id'=>$maxId],0); 
     }
 
     public function delete($params){
         $id=$params['id'];
+        // Product::delete()->where("id = " . $id)->execute();
+        Product::find($id)->delete();
         header( 'Location: /browse' );
-        Product::delete()->where("id =" . $id)->execute();
-
     }
     public function update($params){
         $id=$params['id'];
@@ -57,7 +59,16 @@ class AdminController  extends Controller
         //     'img_path'=> $_POST['img_path']
         // ];
         Product::update()->setValues($_POST)->where("id = " . $id)->execute();
-        header( 'Location: /edit/' . $id );
+        // Product::find($id)->update($_POST)->save()->execute();
+        header( 'Location: /browse');
+    }
+    public function insert($params){
+        $maxId = sql("SELECT MAX(ID) as maxId FROM PRODUCTS ");
+        $_POST['id'] =$maxId[0]['maxId']+1;
+        // Product::insert()->setValues($_POST)->execute();
+        $p = new Product($_POST,true);
+        $p->save();
+        header( 'Location: /browse' );
     }
 }
 // GET -select
