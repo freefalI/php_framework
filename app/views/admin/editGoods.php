@@ -32,8 +32,8 @@
             </form>
             <br>
             <br>
-            <a href="/browse">
-                <button class="btn">
+            <a href="/browse/brands">
+                <button class="btn admin-back">
                     <i class="fas fa-long-arrow-alt-left"></i>
                 </button>
             </a>
@@ -42,7 +42,7 @@
     </head>
     <div id="wrapper">
         <br>
-        <form method='POST' action="/update/{{$product->id}}">
+        <form method='POST' action="/update/goods/{{$product->id}}">
             <div class="form-group" id="add-product-form">
                 <h3 name="id" value="{{$product->id}}">Id = {{$product->id}}</h3>
                 <!-- <input type="email" class="form-control input"  placeholder="Enter id"  value="{{$product->id}}"> -->

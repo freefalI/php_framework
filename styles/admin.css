@@ -11,13 +11,20 @@
 #wrapper{
     margin:0 100px 0 100px ;
 }
-#exit-button{
+#admin-head .nav-admin ,#exit-button button {
     float: right;
-    margin-top: 10px;
-    
+    margin-right: 10px;
+    width: 100px; 
+    position: relative;
+    top:-30px;
 }
-#exit-button button {
-    width: 100px;
+
+#exit-button button  {
+    margin-left: 30px;
+}
+
+.admin-back{
+    margin-top:-40px;
 }
 /*???????*/
 .input{

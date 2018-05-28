@@ -31,8 +31,8 @@
             </form>
             <br>
             <br>
-            <a href="/browse">
-                <button class="btn">
+            <a href="/browse/goods">
+                <button class="btn admin-back">
                     <i class="fas fa-long-arrow-alt-left"></i>
                 </button>
             </a>
@@ -41,24 +41,24 @@
     </header>
     <div id="wrapper">
         <br>
-        <form method='POST' action="/insert">
+        <form method='POST' action="/insert/goods">
             <div class="form-group" id="add-product-form">
-                <!-- <h3 name="id" value="{{$id}}">Id = {{$id}}</h3> -->
+                <h3 name="id" value="<?= $id ?>">Id = <?= $id ?></h3>
                 <!-- <input type="email" class="form-control input"  placeholder="Enter id" > -->
                 <small id="emailHelp" class="form-text text-muted">Note</small>
                 <br>
                 <label for="">Select category</label>
                 <select name="id_category" class="form-control" id="exampleSelect1">
-                    @foreach ($categories as $category):
-                    <option value="{{$category->id}}">{{$category->name}}</option>
-                    @ endforeach;
+                    <?php foreach ($categories as $category): ?>
+                    <option value="<?= $category->id ?>"><?= $category->name ?></option>
+                    <?php  endforeach; ?>
                 </select>
                 <br>
                 <label for="">Select brand</label>
                 <select name="id_brand" class="form-control" id="exampleSelect1">
-                    @foreach ($brands as $brand):
-                    <option value="{{$brand->id}}">{{$brand->name}}</option>
-                    @ endforeach;
+                    <?php foreach ($brands as $brand): ?>
+                    <option value="<?= $brand->id ?>"><?= $brand->name ?></option>
+                    <?php  endforeach; ?>
                 </select>
                 <br>
                 <label for="">Model</label>

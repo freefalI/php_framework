@@ -5,9 +5,12 @@ var cart = {};
     // console.log("ad");
     var buttons = document.getElementsByClassName('add-to-cart');
     for (var i = 0; i < buttons.length; i++) 
-    buttons[i].onclick = addToCart;
+        buttons[i].onclick = addToCart;
+    // $('.cart-button').on('click', sendLocalStorage);
     loadCart();
 })();
+
+
 
 function addToCart(){
     var id = $(this).attr('data-id');
@@ -42,3 +45,4 @@ if(localStorage.getItem('cart')){
     showMiniCart();
 }
 }
+

@@ -17,9 +17,10 @@
     crossorigin="anonymous"></script>
 <!-- <link href="font-awesome.min.css" rel="stylesheet" type="text/css"> -->
 <!-- Our Custom CSS -->
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 <link rel="stylesheet" type="text/css" href="styles/style.css" >
+<link rel="stylesheet" type="text/css" href="styles/cart.css" >
 
 </head>
 <body class="container">
@@ -53,11 +54,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
-                <li class="nav-item nav-right nav-item-right">
+                <li class="nav-item nav-right nav-item-right cart-button">
                     <a class="nav-link" href="/cart">Cart</a>
                 </li>
                 <li class="nav-item nav-right nav-item-right">
-                        <a class="nav-link" href="/browse">Admin</a>
+                        <a class="nav-link" href="/admin">Admin</a>
                 </li>
             </ul>
             <button type="submit" class="btn btn-primary">Cart</button>

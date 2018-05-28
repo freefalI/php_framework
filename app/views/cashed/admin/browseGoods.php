@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Admin Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles/admin.css" >
+    <link rel="stylesheet" type="text/css" href="/styles/admin.css" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
@@ -22,9 +22,12 @@
     <header>
         <div id="admin-head" class = "container-fluid">
             <h1 id="admin-label"><br><br>Admin page</h1>
-            <form method="POST" id="exit-button">
-                <button type="submit" name="exit" class="btn exit-from-admin-panel">EXIT</button>
-            </form>
+                <form method="POST" id="exit-button">
+                    <button type="submit" name="exit" class="btn exit-from-admin-panel">EXIT</button>
+                </form>
+                <a href="/browse/brands"> <button  class="btn nav-admin">Brands</button></a>
+                <a href="/browse/categories"><button  class="btn nav-admin">Categories</button></a>
+                <a href="/browse/goods"><button  class="btn nav-admin">Products</button></a>
         </div>
         
     </header>
@@ -32,7 +35,7 @@
     <br>
     <h1 id="table-header">Products</h1>    
     <br>
-        <a href="/add"><button class="btn" id="go-to-add-page-button">Add new</button></a>
+        <a href="/add/goods"><button class="btn" id="go-to-add-page-button">Add new</button></a>
         <br> <br>
     <div class="table-responsive">
             <table class="table table-striped">
@@ -50,19 +53,19 @@
                 </tr>
               </thead>
               <tbody>
-              @foreach ($products as $product):
+              <?php foreach ($products as $product): ?>
                 <tr>
-                <td><a href="/edit/{{$product->id}}"><i class="fas fa-pencil-alt"></i></a></td>
-                  <td><img id = "browse-img" src="{{$product->img_path}}" alt="image{{$product->id}}"></td>
-                  <td>{{$product->id}}</td>
-                  <td>{{$product->category}}</td>
-                  <td>{{$product->brand}}</td>
-                  <td>{{$product->model}}</td>
-                  <td>{{$product->price}}</td>
-                  <td>{{$product->img_path}}</td>
-                  <td><a href="/delete/{{$product->id}}" onclick="return confirm('Продукт будет удален из бд. Удалить запись?')"><i class="fas fa-times"></i></a></td>
+                <td><a href="/edit/goods/<?= $product->id ?>"><i class="fas fa-pencil-alt"></i></a></td>
+                  <td><img id = "browse-img" src="/<?= $product->img_path ?>" alt="image<?= $product->id ?>"></td>
+                  <td><?= $product->id ?></td>
+                  <td><?= $product->category ?></td>
+                  <td><?= $product->brand ?></td>
+                  <td><?= $product->model ?></td>
+                  <td><?= $product->price ?></td>
+                  <td><?= $product->img_path ?></td>
+                  <td><a href="/delete/goods/<?= $product->id ?>" onclick="return confirm('Запись будет удалена из бд. Удалить запись?')"><i class="fas fa-times"></i></a></td>
                 </tr>
-                @endforeach;
+                <?php endforeach; ?>
               </tbody>
             </table>
             <br><br>
