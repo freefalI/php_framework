@@ -27,12 +27,12 @@
             <h1 id="admin-label">
                 <br>Admin page</h1>
             <form method="POST" id="exit-button">
-                <button type="submit" name="exit" class="btn exit-from-admin-panel">EXIT</button>
+                <button type="submit" name="exit" class="btn exit-from-admin-panel btn-outline-light">EXIT</button>
             </form>
             <br>
             <br>
             <a href="/browse/categories">
-                <button class="btn admin-back">
+                <button class="btn admin-back btn-outline-light">
                     <i class="fas fa-long-arrow-alt-left"></i>
                 </button>
             </a>
@@ -40,7 +40,9 @@
 
     </header>
     <div id="wrapper">
-        <br>
+    <br> <br>
+        <h1>Add new</h1>
+        <br> <br>
         <form method='POST' action="/insert/categories">
             <div class="form-group" id="add-product-form">
                 <h3 name="id" value="<?= $id ?>">Id = <?= $id ?></h3>
@@ -49,7 +51,7 @@
                 <label for="">Name</label>
                 <input type="text" class="form-control input" name="name" placeholder="Enter name">
                 <br>
-                <button onclick="return confirm('Добавить новую запись?')" type="submit" class="btn btn-primary ">Add</button>
+                <button onclick="return confirm('Добавить новую запись?')" type="submit" class="btn btn-info add-button">Add</button>
             </div>
     </div>
 </body>

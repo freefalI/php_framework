@@ -23,11 +23,11 @@
         <div id="admin-head" class = "container-fluid">
             <h1 id="admin-label"><br><br>Admin page</h1>
             <form method="POST" id="exit-button">
-                    <button type="submit" name="exit" class="btn exit-from-admin-panel">EXIT</button>
+                    <button type="submit" name="exit" class="btn exit-from-admin-panel btn-outline-light">EXIT</button>
                 </form>
-                <a href="/browse/brands"> <button  class="btn nav-admin">Brands</button></a>
-                <a href="/browse/categories"><button  class="btn nav-admin">Categories</button></a>
-                <a href="/browse/goods"><button  class="btn nav-admin">Products</button></a>
+                <a href="/browse/brands"> <button  class="btn nav-admin btn-outline-light">Brands</button></a>
+                <a href="/browse/categories"><button  class="btn nav-admin btn-outline-light">Categories</button></a>
+                <a href="/browse/goods"><button  class="btn nav-admin btn-outline-light">Products</button></a>
         </div>
         
     </header>
@@ -35,7 +35,7 @@
     <br>
     <h1 id="table-header">Categories</h1>    
     <br>
-        <a href="/add/categories"><button class="btn" id="go-to-add-page-button">Add new</button></a>
+        <a href="/add/categories"><button class="btn btn-info" btn-info id="go-to-add-page-button">Add new</button></a>
         <br> <br>
     <div class="table-responsive">
             <table class="table table-striped">

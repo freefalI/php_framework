@@ -28,12 +28,12 @@
             <h1 id="admin-label">
                 <br>Admin page</h1>
             <form method="POST" id="exit-button">
-                <button type="submit" name="exit" class="btn exit-from-admin-panel">EXIT</button>
+                <button type="submit" name="exit" class="btn exit-from-admin-panel btn-outline-light">EXIT</button>
             </form>
             <br>
             <br>
             <a href="/browse/brands">
-                <button class="btn admin-back">
+                <button class="btn admin-back btn-outline-light">
                     <i class="fas fa-long-arrow-alt-left"></i>
                 </button>
             </a>
@@ -41,19 +41,21 @@
 
     </head>
     <div id="wrapper">
-        <br>
+    <br> <br>
+        <h1>Edit</h1>
+        <br> 
         <form method='POST' action="/update/brands/{{$brand->id}}">
             <div class="form-group" id="add-product-form">
                 <br>    
                 <h3 name="id" value="{{$brand->id}}">Id = {{$brand->id}}</h3>
                 <!-- <input type="email" class="form-control input"  placeholder="Enter id"  value="{{$product->id}}"> -->
-                <small class="form-text text-muted">Note</small>
-                <br>
+                <!-- <small class="form-text text-muted">Note</small> -->
+                
                 <br>
                 <label for="">Name</label>
                 <input type="text" class="form-control input" name="name" placeholder="Enter name" value="{{$brand->name}}">
                 <br>
-                <button onclick="return confirm('Применить изменения?')" type="submit" class="btn btn-primary ">Save</button>
+                <button onclick="return confirm('Применить изменения?')" type="submit" class="btn btn-info edit-button">Save</button>
         </form>
         </div>
     </div>

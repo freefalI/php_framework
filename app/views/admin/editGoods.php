@@ -28,12 +28,12 @@
             <h1 id="admin-label">
                 <br>Admin page</h1>
             <form method="POST" id="exit-button">
-                <button type="submit" name="exit" class="btn exit-from-admin-panel">EXIT</button>
+                <button type="submit" name="exit" class="btn exit-from-admin-panel btn-outline-light">EXIT</button>
             </form>
             <br>
             <br>
             <a href="/browse/brands">
-                <button class="btn admin-back">
+                <button class="btn admin-back btn-outline-light">
                     <i class="fas fa-long-arrow-alt-left"></i>
                 </button>
             </a>
@@ -41,12 +41,14 @@
 
     </head>
     <div id="wrapper">
-        <br>
+    <br> <br>
+        <h1>Edit</h1>
+        <br> <br>
         <form method='POST' action="/update/goods/{{$product->id}}">
             <div class="form-group" id="add-product-form">
                 <h3 name="id" value="{{$product->id}}">Id = {{$product->id}}</h3>
                 <!-- <input type="email" class="form-control input"  placeholder="Enter id"  value="{{$product->id}}"> -->
-                <small class="form-text text-muted">Note</small>
+                <!-- <small class="form-text text-muted">Note</small> -->
                 <br>
                 <label for="">Select category</label>
                 <select name="id_category" class="form-control" id="exampleSelect1">
@@ -79,7 +81,7 @@
                 <label for="">Image path</label>
                 <input type="text" class="form-control input" name="img_path" placeholder="Enter path to image" value="{{$product->img_path}}">
                 <br>
-                <button onclick="return confirm('Применить изменения?')" type="submit" class="btn btn-primary ">Save</button>
+                <button onclick="return confirm('Применить изменения?')" type="submit" class="btn btn-info edit-button">Save</button>
         </form>
         </div>
         <div>

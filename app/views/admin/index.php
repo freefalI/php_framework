@@ -23,18 +23,18 @@
         <div id="admin-head" class = "container-fluid">
             <h1 id="admin-label"><br><br>Admin page</h1>
             <form method="POST" id="exit-button">
-                <button type="submit" name="exit" class="btn exit-from-admin-panel">EXIT</button>
+                <button type="submit" name="exit" class="btn exit-from-admin-panel btn-outline-light">EXIT</button>
             </form>
         </div>
         
     </header>
     <div id ="wrapper" >
-    <br>
+    <br><br>
     <h1 id="table-header">Choose table to edit</h1>    
-    <br>
-    <a href = "/browse/goods"><button class = "btn">Products</button></a>
-    <a href = "/browse/categories"><button class = "btn">Categories</button></a>
-    <a href = "/browse/brands"><button class = "btn">Brands</button></a>
+    <br><br>
+    <a href = "/browse/goods"><button class = "btn btn-info choose-table-to-edit">Products</button></a>
+    <a href = "/browse/categories"><button class = "btn btn-info choose-table-to-edit">Categories</button></a>
+    <a href = "/browse/brands"><button class = "btn btn-info choose-table-to-edit">Brands</button></a>
     </div>
 </body>
 </html>

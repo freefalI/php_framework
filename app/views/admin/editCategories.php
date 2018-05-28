@@ -28,12 +28,12 @@
             <h1 id="admin-label">
                 <br>Admin page</h1>
             <form method="POST" id="exit-button">
-                <button type="submit" name="exit" class="btn exit-from-admin-panel">EXIT</button>
+                <button type="submit" name="exit" class="btn exit-from-admin-panel btn-outline-light">EXIT</button>
             </form>
             <br>
             <br>
             <a href="/browse/categories">
-                <button class="btn admin-back">
+                <button class="btn admin-back btn-outline-light">
                     <i class="fas fa-long-arrow-alt-left"></i>
                 </button>
             </a>
@@ -41,7 +41,9 @@
 
     </head>
     <div id="wrapper">
-        <br>
+    <br> <br>
+        <h1>Edit</h1>
+        <br> 
         <form method='POST' action="/update/categories/{{$category->id}}">
             <div class="form-group" id="add-product-form">
                 <br>
@@ -49,11 +51,11 @@
                 <!-- <input type="email" class="form-control input"  placeholder="Enter id"  value="{{$product->id}}"> -->
                 <!-- <small class="form-text text-muted">Note</small> -->
                 <br>
-                <br>
+                
                 <label for="">Name</label>
                 <input type="text" class="form-control input" name="name" placeholder="Enter name" value="{{$category->name}}">
                 <br>
-                <button onclick="return confirm('Применить изменения?')" type="submit" class="btn btn-primary ">Save</button>
+                <button onclick="return confirm('Применить изменения?')" type="submit" class="btn btn-info edit-button">Save</button>
         </form>
         </div>
     </div>

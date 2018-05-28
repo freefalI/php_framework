@@ -25,6 +25,8 @@
 
 .admin-back{
     margin-top:-40px;
+    height: 35px;
+    width: 50px;
 }
 /*???????*/
 .input{
@@ -62,4 +64,21 @@
 }
 .form-group{
     float: left;
+}
+.btn-info{
+    background-color: rgb(85, 122, 151) !important; 
+    /* background-color:rgb(85, 122, 151); */
+}
+.btn-info:hover{
+    background-color:rgb(99, 148, 185)!important ;
+    /* background-color: #fff; */
+}
+.btn-outline-light:hover{
+    background-color:azure !important;
+}
+.choose-table-to-edit{
+    width : 120px;
+}
+.add-button, .edit-button{
+    width : 120px;
 }
