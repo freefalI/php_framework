@@ -38,4 +38,4 @@ $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 $m = mail($to, 'Заказ в магазине', $spectext.$message.'</body></html>', $headers);
 
 if ($m) {echo 1;} else {echo 0;}
-
+//ADD TO DB

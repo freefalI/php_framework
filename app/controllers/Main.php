@@ -17,8 +17,8 @@ class Main  extends Controller
     }
     
     public function cart(){
-        // $products = ProductInCart::select()->execute();
-        $products = Product::select()->limit(10)->execute();
+        // // $products = ProductInCart::select()->execute();
+        // $products = Product::select()->limit(10)->execute();
         
         echo  output('cart', [ 'products'=>$products]); 
     }

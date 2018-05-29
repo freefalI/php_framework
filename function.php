@@ -22,20 +22,22 @@ require "ProductInCart.php";
 
 function initProducts()
 {
-     Database::connect('localhost', 'zebra', 'root', '');
+    Database::connect('localhost', 'zebra', 'root', '');
     $localstorage=json_decode($_POST['localstorage']);
     $goods=[];
     foreach ($localstorage as $key=>$value ){
-        $p = Product::find($key);
-        $goods[] =$p->attributes;
+        $p=Product::select()->setValues('products.id','categories.name  as category','brands.name as brand',
+            'products.model','products.price','products.img_path')-> join([
+            'categories'=>'products.id_category=categories.id',
+            'brands'=>'products.id_brand=brands.id'])->where('products.id = ' . $key)->execute()[0];
+            // $p = Product::find($key);
+        $goods[]=$p->attributes;
     }
     $products=[];
     foreach ($goods as $key=>$value ){
         $products[$value['id']] = $value;
     }
     echo json_encode($products);
-
-
 }
 // function initCategories()
 // {
