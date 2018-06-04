@@ -43,7 +43,7 @@ class AdminController  extends Controller
         switch ($table) {
             case 'goods':
             $product=Product::select()->setValues('products.id','categories.name  as category','brands.name as brand',
-            'products.model','products.price','products.img_path')-> join([
+            'products.model','products.price','products.img_path','description')-> join([
             'categories'=>'products.id_category=categories.id',
             'brands'=>'products.id_brand=brands.id'])->where('products.id = ' . $params['id'])->execute()[0];
             $categories = Category::select()->execute();

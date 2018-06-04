@@ -32,7 +32,7 @@
             </form>
             <br>
             <br>
-            <a href="/browse/brands">
+            <a href="/browse/goods">
                 <button class="btn admin-back btn-outline-light">
                     <i class="fas fa-long-arrow-alt-left"></i>
                 </button>
@@ -81,11 +81,14 @@
                 <label for="">Image path</label>
                 <input type="text" class="form-control input" name="img_path" placeholder="Enter path to image" value="<?= $product->img_path ?>">
                 <br>
+                <label for="">Description</label> <br>
+                <textarea name="description" id="" cols="60" rows="10"><?= $product->description ?></textarea>
+                <br>
                 <button onclick="return confirm('Применить изменения?')" type="submit" class="btn btn-info edit-button">Save</button>
         </form>
         </div>
         <div>
-            <img id="img-edit" src="/<?= $product->img_path ?>" alt="image<?= $product->id ?>">
+            <img id="img-edit" src="<?= $product->img_path ?>" alt="image<?= $product->id ?>">
         </div>
     </div>
 </body>

@@ -1,7 +1,7 @@
-
+</div>
     <!-- Footer -->
-    <footer class="footer  bg-dark">
-        <div class="container">
+    <footer class="footer  bg-dark  ">
+        <div class="container foot-cont">
             <div class="row">
                 <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
                     <ul class="list-inline mb-2">
@@ -46,7 +46,8 @@
         </div>
     </footer>
     <!-- <script type="text/javascript" src="scripts/main.js"></script> -->
-
+    <script type="text/javascript" src="/scripts/main.js"></script>
+<script src="/scripts/jquery-3.2.1.min.js"></script>
 </body> 
 
 </html>

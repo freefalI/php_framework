@@ -7,7 +7,8 @@ class Auth implements Middleware
         if (isset($_POST["exit"])) {
             unset($_SESSION['admin']);
             session_destroy();
-            echo output('admin/login', [],0);
+            // echo output('admin/login', [],0);
+            header( 'Location: /' );
             return false;
         }
 

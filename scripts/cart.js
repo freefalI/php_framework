@@ -88,7 +88,7 @@ function showCart() {
             <div class="left">
                 <h1 class="total">Total:
                     <span>${amount}</span>€</h1>
-                <a class="btn">Checkout</a>
+                <a class="checkout btn">Clear cart</a>
             </div>
 
             </div>
@@ -109,34 +109,34 @@ function showCart() {
     }
 }
 
-function delGoods() {
-    //удаляем товар из корзины
-    var id = $(this).attr('data-id');
-    delete cart[id];
-    saveCart();
-    showCart();
-}
+// function delGoods() {
+//     //удаляем товар из корзины
+//     var id = $(this).attr('data-id');
+//     delete cart[id];
+//     saveCart();
+//     showCart();
+// }
 
-function plusGoods() {
-    //добавляет товар в корзине
-    var id = $(this).attr('data-id');
-    cart[id]++;
-    saveCart();
-    showCart();
-}
-function minusGoods() {
-    //уменьшаем товар в корзине
-    var id = $(this).attr('data-id');
-    if (cart[id] == 1) {
-        delete cart[id];
-    }
-    else {
-        cart[id]--;
-    }
+// function plusGoods() {
+//     //добавляет товар в корзине
+//     var id = $(this).attr('data-id');
+//     cart[id]++;
+//     saveCart();
+//     showCart();
+// }
+// function minusGoods() {
+//     //уменьшаем товар в корзине
+//     var id = $(this).attr('data-id');
+//     if (cart[id] == 1) {
+//         delete cart[id];
+//     }
+//     else {
+//         cart[id]--;
+//     }
 
-    saveCart();
-    showCart();
-}
+//     saveCart();
+//     showCart();
+// }
 
 
 function saveCart() {
@@ -155,43 +155,79 @@ function isEmpty(object) {
     
     loadCart();
     
-    // $('.send-email').on('click', sendEmail); // отправить письмо с заказом
+    $('.send-email').on('click', sendEmail); // отправить письмо с заказом
     //  });
 })();
 
 
 function sendEmail() {
-    var ename = $('#ename').val();
+    var name = $('#ename').val();
+    var surname  = $('#esurname').val();
+    var fathersName = $('#efathersName').val();
     var email = $('#email').val();
-    var ephone = $('#ephone').val();
-    if (ename != '' && email != '' && ephone != '') {
-        if (isEmpty(cart)) {
-            $.post(
-                "mail.php",
-                {
-                    "ename": ename,
-                    "email": email,
-                    "ephone": ephone,
-                    "cart": cart,
-                    "goods": goods
-                },
-                function (data) {
-                    if (data == 1) {
-                        alert('Заказ отправлен');
-                    }
-                    else {
-                        alert('Повторите заказ');
-                    }
+    var phoneNumber = $('#ephone').val();
+    var adress = $('#eadress').val();
+    console.log('AAAAAAAAA');
+    // console.log(isEmpty(cart));
+
+    if (isEmpty(cart)) {
+        $.post(
+            "mail.php",
+            {
+                "name": name,
+                "surname": surname,
+                "fathersName": fathersName,
+                "email": email,
+                "phoneNumber": phoneNumber,
+                "adress": adress,
+                "cart": cart,
+                "goods": goods
+            },
+            function (data) {
+                if (data == 1) {
+                    alert('Заказ отправлен');
+                    // window.location.replace('/a');
                 }
-            );
-        }
-        else {
-            alert('Корзина пуста');
-        }
+                else {
+                    alert('Повторите заказ');
+                }
+            }
+        );
     }
     else {
-        alert('Заполните поля');
+        alert('Корзина пуста');
     }
+    // var ename = $('#ename').val();
+    // var email = $('#email').val();
+    // var ephone = $('#ephone').val();
+    // if (ename != '' && email != '' && ephone != '') {
+    //     if (isEmpty(cart)) {
+    //         $.post(
+    //             "mail.php",
+    //             {
+    //                 "ename": ename,
+    //                 "email": email,
+    //                 "ephone": ephone,
+    //                 "cart": cart,
+    //                 "goods": goods
+    //             },
+    //             function (data) {
+    //                 if (data == 1) {
+    //                     alert('Заказ отправлен');
+    //                 }
+    //                 else {
+    //                     alert('Повторите заказ');
+    //                 }
+    //             }
+    //         );
+    //     }
+    //     else {
+    //         alert('Корзина пуста');
+    //     }
+    // }
+    // else {
+    //     alert('Заполните поля');
+    // }
 
 }
 
@@ -230,7 +266,13 @@ function changeTotal() {
     // $(".tax span").html(tax);
     $(".total span").html(price);
 }
-
+function updateNumberInHeader(){
+    var n = 0;
+    for (var key in cart){
+        n+=cart[key];
+    }
+    $('#amount').html(n);
+}
 // $(document).ready(function () {
     function init(){
     
@@ -238,7 +280,11 @@ function changeTotal() {
         var id = $(this).attr('data-id');
         delete cart[id];
         saveCart();
-
+        updateNumberInHeader();
+        $("#amount").css("background", "#05b5a9");
+        $("#amount").css("color", "#fff");
+        window.setTimeout(function () {  $("#amount").css("background", "none") }, 500);
+        window.setTimeout(function () {  $("#amount").css("color", "black") }, 500);
         var el = $(this);
         el.parent().parent().addClass("removed");
         window.setTimeout(
@@ -261,7 +307,12 @@ function changeTotal() {
         var id = $(this).attr('data-id');
         cart[id]++;
         saveCart();
-        
+        updateNumberInHeader();
+        $("#amount").css("background", "#05b5a9");
+        $("#amount").css("color", "#fff");
+        window.setTimeout(function () {  $("#amount").css("background", "none") }, 500);
+        window.setTimeout(function () {  $("#amount").css("color", "black") }, 500);
+
         $(this).parent().children(".qt").html(parseInt($(this).parent().children(".qt").html()) + 1);
 
         $(this).parent().children(".full-price").addClass("added");
@@ -269,7 +320,13 @@ function changeTotal() {
         var el = $(this);
         window.setTimeout(function () { el.parent().children(".full-price").removeClass("added"); changeVal(el); }, 150);
     });
-   
+   function updateNumberInHeader(){
+    var n = 0;
+    for (var key in cart){
+        n+=cart[key];
+    }
+    $('#amount').html(n);
+}
     $(".qt-minus").click(function () {
         var id = $(this).attr('data-id');
         child = $(this).parent().children(".qt");
@@ -282,6 +339,12 @@ function changeTotal() {
             cart[id]--;
         }
         saveCart();
+        updateNumberInHeader();
+        $("#amount").css("background", "#05b5a9");
+        $("#amount").css("color", "#fff");
+        window.setTimeout(function () {  $("#amount").css("background", "none") }, 500);
+        window.setTimeout(function () {  $("#amount").css("color", "black") }, 500);
+
         $(this).parent().children(".full-price").addClass("minused");
 
         var el = $(this);
@@ -291,7 +354,7 @@ function changeTotal() {
 
     window.setTimeout(function () { $(".is-open").removeClass("is-open") }, 1200);
 
-    $(".btn").click(function () {
+    $(".checkout").click(function () {
         check = true;
         $(".remove").click();
     });

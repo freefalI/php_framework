@@ -28,12 +28,23 @@ Route::run();
     // echo json_encode($newProduct);
 
 // for ($i=1; $i<28; $i++) { 
-// SQL::table('products')->update()->where("id=" . $i)->setValues([
+// SQL::table('products')->insert()->where("id=" . $i)->setValues([
 //     'img_path'=>"vendor/images/" .$i . ".jpg"
 //     ])->execute();
 // }
 
-
+// for ($i=1; $i<120; $i++) { 
+//     $b=$i%4+1;
+//     $c=$i%4+1;
+//     SQL::table('products')->insert()->setValues([
+//         'id'=>$i,
+//         'id_brand'=>$b,
+//         'model'=>'ac' . $i,
+//         'id_category'=>$c,
+//         'price'=>$i*1.5,
+//         'img_path'=>'/vendor/jeans1.png'
+//         ])->execute();
+//     }
 
 // SQL::table('sneakers')->select()->execute();print_r($arr);
 // $products = Product::select()->execute();
@@ -44,7 +55,7 @@ Route::run();
 
 // $s1 = Student::find(5);
 // $s1->changeGroup('Андрій');
-//$s1->insert();
+// $s1->insert();
 // echo $s1;
 
 //

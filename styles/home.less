@@ -1,0 +1,452 @@
+// content homepage
+#home-zebra-image-1 {
+    // width: 1280px;
+    // height: 973px;
+    // width:100%; 
+    background-image: url("../vendor/zebra1.png");
+    height: 700px;
+    width: 100%;
+}
+
+#label-categories {
+    display: block;
+    margin: auto;
+    position: relative; // margin-top:-500px;
+    top: 200px;
+    font-family: JosefinSlab;
+    color: #fff;
+    z-index: 50;
+    font-size: 116.05px;
+    /* Приближение из-за подстановки шрифтов */
+    font-weight: 400;
+    line-height: 19.72px;
+    /* Приближение из-за подстановки шрифтов */
+    text-align: center;
+}
+
+#home-categories-circles {
+    @s: -300px;
+    @s2: -480px;
+    @d1: -100px;
+    @d2: -35px;
+    @diameter: 180px;
+    overflow: hidden;
+    #home-zebra-image-2 {
+        // width: 1280px;
+        // height: 973px;
+        // width:100%; 
+        height: 700px;
+        width: 100%;
+        background-image: url("../vendor/zebra2.png"); // height: 726px;
+    }
+    div {
+        border-radius: 50%;
+        width: @diameter;
+        height: @diameter;
+        position: relative;
+        top: @s;
+        float: left;
+        background-color: rgba(88, 219, 211, 0.5);
+        img {
+            display: block;
+            margin: auto;
+            margin-top: @diameter/4;
+        }
+    }
+    #ellipse1 {
+        left: -100px;
+        background-color: rgba(88, 219, 211, 0.5);
+        overflow: hidden;
+    }
+    #ellipse2 {
+        left: @d1 + @d2;
+        top: @s - 65px;
+        background-color: rgba(88, 219, 211, 0.5);
+    }
+    #ellipse3 {
+        left: @d1 + @d2*2;
+        background-color: rgba(88, 219, 211, 0.8);
+    }
+    #ellipse4 {
+        left: @d1 + @d2*3;
+        top: @s - 65px;
+        background-color: rgba(88, 219, 211, 0.5);
+    }
+    #ellipse5 {
+        left: @d1 + @d2*4;
+        background-color: rgba(88, 219, 211, 0.8);
+    }
+    #ellipse6 {
+        top: @s - 65px;
+        left: @d1 + @d2*5;
+        background-color: rgba(88, 219, 211, 0.5);
+    }
+    #ellipse7 {
+        top: @s2 ;
+        left: 980px + @d2*6;
+        background-color: rgba(88, 219, 211, 0.5);
+    }
+    #ellipse8 {
+        top: @s2 - 65px;
+        left: 980px + @d2*7;
+        background-color: rgba(88, 219, 211, 0.5);
+    }
+    #ellipse9 {
+        top: @s2 ;
+        left: 980px + @d2*8;
+        background-color: rgba(88, 219, 211, 0.5);
+    }
+}
+
+.goods-example {
+    margin-bottom: -300px;
+    #levis-logo {
+        width: 350px;
+        height: 171px;
+    }
+    position: relative; // width: 1000px;
+    top: -370px;
+    margin-left: 0px; // margin-top:-2*@diameter;
+    #big-image {
+        float: right;
+        width: 497px;
+        height: 477px;
+        margin-top: 40px;
+        clear: both;
+    }
+    #goods-info {
+        #name {
+            margin-top: 80px;
+            font-family: HelveticaNeue;
+            color: #1d1d1d;
+            font-size: 50.05px;
+            /* Приближение из-за подстановки шрифтов */
+            font-weight: 700;
+            line-height: 19.72px;
+            /* Приближение из-за подстановки шрифтов */
+            text-align: left;
+        }
+        #description {
+            margin-top: 40px;
+            font-family: HelveticaCyr;
+            color: #1d1d1d;
+            font-size: 14.05px;
+            /* Приближение из-за подстановки шрифтов */
+            line-height: 20px;
+            /* Приближение из-за подстановки шрифтов */
+            text-align: left;
+        }
+        #rate {
+            float: left;
+            margin-top: 40px;
+            font-family: HelveticaNeue;
+            color: #1d1d1d;
+            font-size: 36.05px;
+            /* Приближение из-за подстановки шрифтов */
+            font-weight: 400;
+            line-height: 19.72px;
+            /* Приближение из-за подстановки шрифтов */
+            text-align: left;
+            span {
+                font-family: HelveticaNeue;
+                color: #1d1d1d;
+                font-size: 36.05px;
+                /* Приближение из-за подстановки шрифтов */
+                font-weight: 700;
+                line-height: 19.72px;
+                /* Приближение из-за подстановки шрифтов */
+                text-align: left;
+            }
+        }
+        #button {
+            float: right;
+            margin-top: 25px;
+            background-color: #d62132;
+            width: 215px;
+            height: 48px;
+            img {
+                display: inline-block;
+                margin-top: -10px;
+                margin-left: 10px; // background-color: #ffffff;
+                width: 29px;
+                height: 26px;
+            }
+            span {
+                display: inline-block;
+                margin-top: 12px;
+                margin-left: 15px;
+                font-family: HelveticaNeue;
+                color: #ffffff;
+                font-size: 28.05px;
+                /* Приближение из-за подстановки шрифтов */
+                font-weight: 400;
+                line-height: 19.72px;
+                /* Приближение из-за подстановки шрифтов */
+                text-align: right;
+            }
+        }
+    }
+    #othergoods {
+        margin-top: 200px;
+        div {
+            float: left;
+        } // display: block;
+        display: flex;
+        justify-content: space-around;
+        img {
+            width: 178px;
+            height: 170px;
+        }
+        p {
+            text-align: center;
+            margin-top: 10px;
+        } // display:flex;
+    }
+}
+
+// @media only screen and  (min-width: 768px) and (max-width:1200px) {
+// }
+@media only screen and (min-width: 766px) {
+    #label-categories {
+        font-size: 60px;
+    }
+    #home-5image {
+        display: none;
+    }
+    #big-image {
+        float: right;
+        width: 197px;
+        height: 477px;
+        margin-top: 40px;
+        clear: both;
+    }
+    #home-categories-circles {
+        @s: -300px;
+        @s2: -480px;
+        @d1: -100px;
+        @d2: -35px;
+        @diameter: 100px;
+        overflow: hidden;
+        #home-zebra-image-2 {
+            // width: 1280px;
+            // height: 973px;
+            // width:100%; 
+            height: 700px;
+            width: 100%;
+            background-image: url("../vendor/zebra2.png"); // height: 726px;
+        }
+        div {
+            border-radius: 50%;
+            width: @diameter;
+            height: @diameter;
+            position: relative;
+            top: @s;
+            float: left;
+            background-color: rgba(88, 219, 211, 0.5);
+            img {
+                display: block;
+                margin: auto;
+                margin-top: @diameter/4;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    // #home-5image{
+    //     display:inline;
+    // }
+    #label-categories {
+        font-size: 100px;
+    }
+    #home-5image {
+        display: block;
+    }
+    #home-categories-circles {
+        @s: -300px;
+        @s2: -460px;
+        @d1: -100px;
+        @d2: -35px;
+        @diameter: 150px;
+        overflow: hidden;
+        #home-zebra-image-2 {
+            // width: 1280px;
+            // height: 973px;
+            // width:100%; 
+            height: 700px;
+            width: 100%;
+            background-image: url("../vendor/zebra2.png"); // height: 726px;
+        }
+        div {
+            border-radius: 50%;
+            width: @diameter;
+            height: @diameter;
+            position: relative;
+            top: @s;
+            float: left;
+            background-color: rgba(88, 219, 211, 0.5);
+            img {
+                display: block;
+                height: auto; // max-height:80%;
+                width: 100px;
+                margin-top: 30px;
+            }
+            .wid {
+                width: 55px;
+            }
+            #el4 {
+                margin-top: 45px;
+            }
+        }
+        #ellipse1 {
+            left: -100px;
+            background-color: rgba(88, 219, 211, 0.5);
+            overflow: hidden;
+        }
+        #ellipse2 {
+            left: @d1 + @d2;
+            top: @s - 65px;
+            background-color: rgba(88, 219, 211, 0.5);
+        }
+        #ellipse3 {
+            left: @d1 + @d2*2;
+            background-color: rgba(88, 219, 211, 0.8);
+        }
+        #ellipse4 {
+            left: @d1 + @d2*3;
+            top: @s - 65px;
+            background-color: rgba(88, 219, 211, 0.5);
+        }
+        #ellipse5 {
+            left: @d1 + @d2*4;
+            background-color: rgba(88, 219, 211, 0.8);
+        }
+        #ellipse6 {
+            top: @s - 65px;
+            left: @d1 + @d2*5;
+            background-color: rgba(88, 219, 211, 0.5);
+        }
+        #ellipse7 {
+            top: @s2 ;
+            left: 800px + @d2*6;
+            background-color: rgba(88, 219, 211, 0.5);
+        }
+        #ellipse8 {
+            top: @s2 - 65px;
+            left: 800px + @d2*7;
+            background-color: rgba(88, 219, 211, 0.5);
+        }
+        #ellipse9 {
+            top: @s2 ;
+            left: 800px + @d2*8;
+            background-color: rgba(88, 219, 211, 0.5);
+        }
+    }
+    .goods-example {
+        top: -320px;
+        #big-image {
+            width: 397px;
+            height: auto;
+            margin-top: 130px; // margin-left:50px;
+        }
+    }
+}
+
+@media (min-width: 1120px) {
+    #home-5image {
+        display: block;
+    }
+    #home-categories-circles {
+        @s: -300px;
+        @s2: -480px;
+        @d1: -100px;
+        @d2: -35px;
+        @diameter: 180px;
+        overflow: hidden;
+        #home-zebra-image-2 {
+            // width: 1280px;
+            // height: 973px;
+            // width:100%; 
+            height: 700px;
+            width: 100%;
+            background-image: url("../vendor/zebra2.png"); // height: 726px;
+        }
+        div {
+            border-radius: 50%;
+            width: @diameter;
+            height: @diameter;
+            position: relative;
+            top: @s;
+            float: left;
+            background-color: rgba(88, 219, 211, 0.5);
+            img {
+                display: block;
+                margin: auto;
+                margin-top: @diameter/4;
+            }
+            #el4 {
+                margin-top: 60px;
+            }
+        }
+        #ellipse1 {
+            left: -100px;
+            background-color: rgba(88, 219, 211, 0.5);
+            overflow: hidden;
+        }
+        #ellipse2 {
+            left: @d1 + @d2;
+            top: @s - 65px;
+            background-color: rgba(88, 219, 211, 0.5);
+        }
+        #ellipse3 {
+            left: @d1 + @d2*2;
+            background-color: rgba(88, 219, 211, 0.8);
+        }
+        #ellipse4 {
+            left: @d1 + @d2*3;
+            top: @s - 65px;
+            background-color: rgba(88, 219, 211, 0.5);
+        }
+        #ellipse5 {
+            left: @d1 + @d2*4;
+            background-color: rgba(88, 219, 211, 0.8);
+        }
+        #ellipse6 {
+            top: @s - 65px;
+            left: @d1 + @d2*5;
+            background-color: rgba(88, 219, 211, 0.5);
+        }
+        #ellipse7 {
+            top: @s2 ;
+            left: 980px + @d2*6;
+            background-color: rgba(88, 219, 211, 0.5);
+        }
+        #ellipse8 {
+            top: @s2 - 65px;
+            left: 980px + @d2*7;
+            background-color: rgba(88, 219, 211, 0.5);
+        }
+        #ellipse9 {
+            top: @s2 ;
+            left: 980px + @d2*8;
+            background-color: rgba(88, 219, 211, 0.5);
+        }
+    }
+    .goods-example {
+        margin-bottom: -300px;
+        #levis-logo {
+            width: 350px;
+            height: 171px;
+        }
+        position: relative; // width: 1000px;
+        top: -370px;
+        margin-left: 0px; // margin-top:-2*@diameter;
+        #big-image {
+            float: right;
+            width: 497px;
+            height: 477px;
+            margin-top: 40px;
+            clear: both;
+        }
+    }
+}

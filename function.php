@@ -18,7 +18,7 @@ require "app/web/routes.php";
 //models
 require "Student.php";
 require "Product.php";
-require "ProductInCart.php";
+// require "ProductInCart.php";
 
 function initProducts()
 {

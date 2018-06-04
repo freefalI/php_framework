@@ -72,6 +72,10 @@
                 <label for="">Image path</label>
                 <input type="text" class="form-control input" name="img_path" placeholder="Enter path to image">
                 <br>
+            
+                <label for="">Description</label> <br>
+                <textarea name="description" id=""  placeholder="Enter description" cols="60" rows="10"></textarea>
+                <br>
                 <button onclick="return confirm('Добавить новую запись?')" type="submit" class="btn btn-info add-button">Add</button>
             </div>
     </div>

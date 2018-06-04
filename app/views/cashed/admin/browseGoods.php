@@ -56,7 +56,7 @@
               <?php foreach ($products as $product): ?>
                 <tr>
                 <td><a href="/edit/goods/<?= $product->id ?>"><i class="fas fa-pencil-alt"></i></a></td>
-                  <td><img id = "browse-img" src="/<?= $product->img_path ?>" alt="image<?= $product->id ?>"></td>
+                  <td><img id = "browse-img" src="<?= $product->img_path ?>" alt="image<?= $product->id ?>"></td>
                   <td><?= $product->id ?></td>
                   <td><?= $product->category ?></td>
                   <td><?= $product->brand ?></td>

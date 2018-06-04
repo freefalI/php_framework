@@ -1,11 +1,17 @@
 <?php
 
-Route::get('student/{id}','StudentController@student');
-Route::get('students','StudentController@students');
+// Route::get('student/{id}','StudentController@student');
+// Route::get('students','StudentController@students');
 // Route::get('admin','AdminController@index');
-Route::get('products','Main@container');
+// Route::get('products','Main@container');
+Route::get('products/{category}','Main@container');
+Route::get('product/{id}','Main@informPage');
 // Route::get('cart','CartController@index');
 Route::get('cart','Main@cart');
+Route::get('about','Main@about');
+Route::get('registration','Main@registration');
+Route::get('register','Main@register');
+Route::get('confirm','Main@confirm');
 
 /*
 Route::get('articles/{id}','article@ff');

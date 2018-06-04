@@ -1,3 +1,6 @@
+<link rel="stylesheet/less" type="text/css" href="/styles/home.less">
+<script type="text/javascript" src="/styles/less.min.js"></script>
+
 <div>
     <img id="home-zebra-image-1" class="img-fluid" src="/vendor/zebra1gradient.png" alt="">
 </div>
@@ -6,33 +9,33 @@
     <h1>My First Bootstrap Page</h1>
     <p>Resize this responsive page to see the effect!</p>
 </div>
-<span id="label-categories" сдфыы="text-center">CATEGORIES</span>
+<span id="label-categories" class='fa'>CATEGORIES</span>
 <div id="home-categories-circles">
 
     <img id="home-zebra-image-2" class="img-fluid" src="/vendor/zebra2gradient.png" alt="">
 
     <div id="ellipse1"></div>
-    <div id="ellipse2">
+    <a href="/products/shoes"><div id="ellipse2">
         <img id="shape" src="/vendor/Shape1.png">
-    </div>
-    <div id="ellipse3">
+    </div></a>
+    <a href="/products/shirts"><div id="ellipse3">
         <img class="img-fluid" src="/vendor/Shape2.png">
-    </div>
-    <div id="ellipse4">
-        <img src="/vendor/Shape3.png">
-    </div>
-    <div id="ellipse5">
-        <img src="/vendor/Shape4.png">
-    </div>
-    <div id="ellipse6">
+    </div></a>
+    <a href="/products/jeans"><div id="ellipse4">
+        <img class="wid" src="/vendor/Shape3.png">
+    </div></a>
+    <a href="/products/accessories"><div id="ellipse5">
+        <img  id = "el4"  src="/vendor/Shape4.png">
+    </div></a>
+    <a href="/products/shoes"><div id="ellipse6">
         <img src="/vendor/Shape1.png">
-    </div>
-    <div id="ellipse7">
+    </div></a>
+    <a href="/products/shirts"><div id="ellipse7">
         <img src="/vendor/Shape2.png">
-    </div>
-    <div id="ellipse8">
-        <img src="/vendor/Shape3.png">
-    </div>
+    </div></a>
+    <a href="/products/jeans"><div id="ellipse8">
+        <img class="wid" src="/vendor/Shape3.png">
+    </div></a>
     <div id="ellipse9"></div>
 
     <!-- <img id = "ellipse1" src="/vendor/Ellipse1.png" alt="">    
@@ -76,7 +79,7 @@
         <div><img class="img-thumbnail" src="/vendor/jeans1.png" alt="jeans"><p>Levis Jeans-071</p></div>
         <div><img class="img-thumbnail" src="/vendor/jeans1.png" alt="jeans"><p>Levis Jeans-071</p></div>
         <div><img class="img-thumbnail" src="/vendor/jeans1.png" alt="jeans"><p>Levis Jeans-071</p></div>
-        <div> <img class="img-thumbnail" src="/vendor/jeans1.png" alt="jeans"><p>Levis Jeans-071</p></div>
+        <div id="home-5image"> <img class="img-thumbnail"  src="/vendor/jeans1.png" alt="jeans"><p>Levis Jeans-071</p></div>
 
     </div>
 </div>

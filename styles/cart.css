@@ -1,5 +1,5 @@
 body {
-	background: #eee;
+	background: #fff;
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
@@ -22,7 +22,7 @@ body {
 #site-header h1 {
 	font-size: 31px;
 	font-weight: 300;
-	padding: 40px 0;
+	padding: 40px 0 0 20px;
 	position: relative;
 	margin: 0;
 }
@@ -148,13 +148,14 @@ a:hover {
 }
 
 .product header h3 {
+	text-align: center !important;
 	background: #53b5aa;
 	color: #fff;
 	font-size: 22px;
 	font-weight: 300;
 	line-height: 49px;
 	margin: 0;
-	padding: 0 30px;
+	/* padding: 0 35px; */
 	position: absolute;
 	bottom: -50px;
 	right: 0;
@@ -169,8 +170,12 @@ a:hover {
 
 .remove {
 	cursor: pointer;
+	/* margin:auto; */
 }
-
+.product .remove h3{
+	/* margin-l:auto; */
+	text-align: center;
+}
 .product .content {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -286,7 +291,7 @@ a:hover {
 }
 
 #footer-cart h3 {
-	font-size: 19px;
+	font-size: 30px;
 	font-weight: 300;
 	margin: 15px 0;
 }

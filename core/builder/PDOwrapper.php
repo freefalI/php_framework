@@ -31,7 +31,7 @@ class Database
         $sth = self::$dbh->prepare($query);
         $sth->execute($args);
         if ($debug_mode) {
-          echo $sth->debugDumpParams();
+          echo "<pre/>" . $sth->debugDumpParams();
         }
         return  $sth->fetchAll(PDO::FETCH_ASSOC);
  

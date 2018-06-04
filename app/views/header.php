@@ -18,14 +18,20 @@
 <!-- <link href="font-awesome.min.css" rel="stylesheet" type="text/css"> -->
 <!-- Our Custom CSS -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+<!-- <link rel="stylesheet" type="text/css" href="styles/style.css" > -->
+<!-- <link rel="stylesheet" type="text/css" href="styles/cart.css" > -->
+<link rel="stylesheet/less" type="text/css" href="/styles/header.less">
+<link rel="stylesheet/less" type="text/css" href="/styles/container.less">
+<!-- <script type="text/javascript" src="/styles/less.min.js"></script> -->
+<script type="text/javascript" src="/styles/less.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="styles/style.css" >
-<link rel="stylesheet" type="text/css" href="styles/cart.css" >
 
 </head>
-<body class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">ZEBRA</a>
+<body >
+    <header class = "container-fluid bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand header-logo" href="/"><span id="ze">ZE</span><span id="bra">BRA</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03"
             aria-expanded="false" aria-label="Toggle navigation" style="">
             <span class="navbar-toggler-icon"></span>
@@ -33,7 +39,7 @@
 
         <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item active header-button-home">
                     <a class="nav-link" href="/">Home
                         <span class="sr-only">(current)</span>
                     </a>
@@ -42,32 +48,35 @@
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Products</a>
                     <div class="dropdown-menu " x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
                         <a class="dropdown-item" href="/products">Products</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item" href="/products/jeans">Jeans</a>
+                        <a class="dropdown-item" href="/products/shirts">Shirts</a>
+                        <a class="dropdown-item" href="/products/shoes">Shoes</a>
+                        <a class="dropdown-item" href="/products/accessories">Accessories</a>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Shopping</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="/about">About</a>
                 </li>
                 <li class="nav-item nav-right nav-item-right cart-button">
-                    <a class="nav-link" href="/cart">Cart</a>
+                    <a class="nav-link cart-image" href="/cart"><img src="/vendor/cart-image.png" alt="cart"> <sup id="amount"></sup></a>
                 </li>
                 <li class="nav-item nav-right nav-item-right">
                         <a class="nav-link" href="/admin">Admin</a>
                 </li>
             </ul>
-            <button type="submit" class="btn btn-primary">Cart</button>
+            <!-- <button type="submit" class="btn btn-primary">Cart</button> -->
 
-            <form class="form-inline my-2 my-lg-0">
+            <!-- <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            </form> -->
 
 
         </div>
     </nav>
+</header>
+    <div id="wrapper" class = "container">
