@@ -11,6 +11,9 @@ switch ($action) {
     case 'initProducts':
         initProducts();
         break;
+    case 'fastBuy':
+        fastBuy();
+        break;
     case 'initCategories':
         initCategories();
         break;

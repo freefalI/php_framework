@@ -21,6 +21,9 @@ require "Product.php";
 require "Brand.php";
 require "Category.php";
 
+if(!isset($_SESSION)){
+    session_start();
+}
 
 Route::run();
 

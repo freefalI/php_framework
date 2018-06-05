@@ -1,4 +1,4 @@
-<link rel="stylesheet/less" type="text/css" href="/styles/about.less">
+<link rel="stylesheet/less" type="text/css" href="/styles/register.less">
 <script type="text/javascript" src="/styles/less.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 

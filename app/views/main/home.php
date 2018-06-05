@@ -1,14 +1,25 @@
 <link rel="stylesheet/less" type="text/css" href="/styles/home.less">
 <script type="text/javascript" src="/styles/less.min.js"></script>
 
-<div>
+<div id = "home-top">
     <img id="home-zebra-image-1" class="img-fluid" src="/vendor/zebra1gradient.png" alt="">
+    
+    <p>INTRODUCING</p>
+    <h2>WILD EYES</h2>
 </div>
+<div id="sales">
+    @ foreach ($sales as $index=>$sale):
+        <div class = "one_sale">
+            <h2>-{{$sale->stock}}%</h2>
+            <a href="/product/{{$saleGoods[$index]->id}}">
+                <img class="" src="{{$saleGoods[$index]->img_path}}" alt="jeans">
+                <p>{{$saleGoods[$index]->model}}</p>
+            </a>
+        </div>
+    @ endforeach;
 
-<div class="jumbotron text-center">
-    <h1>My First Bootstrap Page</h1>
-    <p>Resize this responsive page to see the effect!</p>
-</div>
+    </div>
+
 <span id="label-categories" class='fa'>CATEGORIES</span>
 <div id="home-categories-circles">
 
@@ -55,31 +66,29 @@
 
     <img id="levis-logo" src="/vendor/levis.png" alt="Levis">
 
-    <img id="big-image" src="/vendor/jeans1.png" alt="jeans">
+    <img id="big-image" src="{{$product->img_path}}" alt="jeans">
     <div id="goods-info">
-        <p id="name">Mens Levis Jeans-071</p>
+        <a href ="/product/{{$product->id}}"> <p id="name">{{$product->model}}</p></a>
         <p id="description">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-            book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-            unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            {{$product->description}}
         </p>
         <p id="rate">Rate: 
-            <span>$ 61.5</span>
+            <span>$ {{$product->price}}</span>
         </p>
-        <div id="button">
+        <div id="" >
+            <button data-id="{{$product->id}}" class ="add-to-cart">
             <img src="/vendor/cart-image-white.png" alt="">
             <span>Add to cart</span>
+        </button>
         </div>
     </div>
     <div id="othergoods">
-        <div><img class="img-thumbnail" src="/vendor/jeans1.png" alt="jeans">
-        <p>Levis Jeans-071</p></div>
-        <div><img class="img-thumbnail" src="/vendor/jeans1.png" alt="jeans"><p>Levis Jeans-071</p></div>
-        <div><img class="img-thumbnail" src="/vendor/jeans1.png" alt="jeans"><p>Levis Jeans-071</p></div>
-        <div><img class="img-thumbnail" src="/vendor/jeans1.png" alt="jeans"><p>Levis Jeans-071</p></div>
-        <div id="home-5image"> <img class="img-thumbnail"  src="/vendor/jeans1.png" alt="jeans"><p>Levis Jeans-071</p></div>
+        <div><a href="/product/{{$prods[0]->id}}"><img class="img-thumbnail" src="{{$prods[0]->img_path}}" alt="jeans">
+        <p>{{$prods[0]->model}}</p></a></div>
+        <div><a href="/product/{{$prods[1]->id}}"><img class="img-thumbnail" src="{{$prods[1]->img_path}}" alt="jeans"><p>{{$prods[1]->model}}</p></a></div>
+        <div><a href="/product/{{$prods[2]->id}}"><img class="img-thumbnail" src="{{$prods[2]->img_path}}" alt="jeans"><p>{{$prods[2]->model}}</p></a></div>
+        <div><a href="/product/{{$prods[3]->id}}"><img class="img-thumbnail" src="{{$prods[3]->img_path}}" alt="jeans"><p>{{$prods[3]->model}}</p></a></div>
+        <div id="home-5image"><a href="/product/{{$prods[4]->id}}"> <img class="img-thumbnail"  src="{{$prods[4]->img_path}}" alt="jeans"><p>{{$prods[4]->model}}</p></a></div>
 
     </div>
 </div>

@@ -65,8 +65,8 @@ body{
 //--------------------------------
 .navbar {
     // padding-left:200px;
-    margin:auto;
-    width:1000px;
+    // margin:auto;
+    // width:auto;
     font-family: "Roboto Condensed",Roboto;
     color:#000;
     .header-logo {
@@ -107,31 +107,38 @@ body{
         color:#05b5a9;
     }
 }
-@media (max-width:768px) {
-    .navbar { 
-       width:510px;
-       .header-button-home {
-        margin-left: 20px;
-    }
-    }
+// @media (max-width:900) {
+//     .navbar { 
+//        width:510px;
+//        .header-button-home {
+//         margin-left: 20px;
+//     }
+//     }
     
-}
-@media (min-width:768px) {
+// }
+@media (max-width:992px) {
     .navbar { 
-       width:700px;
+       width:auto;
        .header-button-home {
-        margin-left: 20px;
+       display:none;
     }
     }
     
 }
 
-@media (min-width:992px) {
+@media (min-width:900px) {
     .navbar { 
         width:900px;
         .header-button-home {
-         margin-left: 120px;
+         margin-left:20px;
      }
      }
 }
-
+@media (min-width:1200px) {
+    .navbar { 
+        width:1000px;
+        .header-button-home {
+         margin-left:100px;
+     }
+     }
+}

@@ -15,6 +15,7 @@ function loadCart() {
                 goods = JSON.parse(data);
                 showCart();
                 init();
+                // $('.fastBuy').on('click', fastBuy); 
             });
     }
     else {
@@ -155,11 +156,52 @@ function isEmpty(object) {
     
     loadCart();
     
-    $('.send-email').on('click', sendEmail); // отправить письмо с заказом
+    $('.fastBuy').on('click', fastBuy); 
+    $('.Buy').on('click', Buy); 
+    // $('.send-email').on('click', sendEmail); // отправить письмо с заказом
     //  });
 })();
 
+function fastBuy(){
+    alert("adadgr");
+    var name = $('#ename').val();
+    var phoneNumber = $('#ephone').val();
+    if (isEmpty(cart)) {
+        $.post(
+            "/fastBuy",
+            {
+                // "action" :'fastBuy',
+                "name": name,
+                "phoneNumber": phoneNumber,
+                "cart": cart,
+                "goods": goods,
+            },function(data){
+                console.log(data);
+            }
+        );
+    }
+    else {
+        alert('Корзина пуста');
+    }
+}
 
+function Buy(){
+    if (isEmpty(cart)) {
+        $.post(
+            "/buy",
+            {
+                // "action" :'fastBuy',
+                "cart": cart,
+                "goods": goods,
+            },function(data){
+                console.log(data);
+            }
+        );
+    }
+    else {
+        alert('Корзина пуста');
+    }
+}
 function sendEmail() {
     var name = $('#ename').val();
     var surname  = $('#esurname').val();
@@ -265,6 +307,7 @@ function changeTotal() {
     // $(".subtotal span").html(price);
     // $(".tax span").html(tax);
     $(".total span").html(price);
+    $(".total2").html(price);
 }
 function updateNumberInHeader(){
     var n = 0;

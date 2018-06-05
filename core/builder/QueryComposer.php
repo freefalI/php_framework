@@ -5,7 +5,6 @@ class QueryComposer
 {
     private static function build_where($q, &$query, &$args)
     {
-        echo $q->where;
         if (isset($q->where)) {
             $query .= ' WHERE';
             $arr = explode(' ', $q->where);
@@ -70,7 +69,7 @@ class QueryComposer
         if (isset($q->limit)) {
             $query .= "LIMIT $q->limit";
         }
-        return dsql($query, $args);
+        return sql($query, $args);
     }
 
     private static function buildInsert($q)

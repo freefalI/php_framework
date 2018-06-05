@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zebra shop</title>
 
-
+<link href="https://fonts.googleapis.com/css?family=Holtwood+One+SC" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -30,7 +30,7 @@
 </head>
 <body >
     <header class = "container-fluid bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light ">
+    <nav class="navbar navbar-expand-lg navbar-light container">
         <a class="navbar-brand header-logo" href="/"><span id="ze">ZE</span><span id="bra">BRA</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03"
             aria-expanded="false" aria-label="Toggle navigation" style="">
@@ -47,8 +47,7 @@
                 <li class="nav-item dropdown show">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Products</a>
                     <div class="dropdown-menu " x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
-                        <a class="dropdown-item" href="/products">Products</a>
-                        <div class="dropdown-divider"></div>
+                        
                         <a class="dropdown-item" href="/products/jeans">Jeans</a>
                         <a class="dropdown-item" href="/products/shirts">Shirts</a>
                         <a class="dropdown-item" href="/products/shoes">Shoes</a>
@@ -64,9 +63,19 @@
                 <li class="nav-item nav-right nav-item-right cart-button">
                     <a class="nav-link cart-image" href="/cart"><img src="/vendor/cart-image.png" alt="cart"> <sup id="amount"></sup></a>
                 </li>
-                <li class="nav-item nav-right nav-item-right">
-                        <a class="nav-link" href="/admin">Admin</a>
-                </li>
+                <!-- <li class="nav-item nav-right nav-item-right"> -->
+                        <!-- <a class="nav-link" href="/admin">Admin</a> -->
+                <!-- </li> -->
+                <?php if(!isset($_SESSION['user'])):?>
+                <li class="nav-item"><a class="nav-link" href ="/registration" >Registration</a></li>
+                <li class="nav-item"> <a class="nav-link" href ="/authorisation" >Log in</a></li>
+                <?php endif;?>
+                <?php if(isset($_SESSION['user'])):?>
+                <p><?=$_SESSION['user']->email?></p>
+                <p> <?=$_SESSION['user']->name?></p>
+                <p> <?=$_SESSION['user']->surname?></p>
+                <li class="nav-item"> <a  class="nav-link" href ="/unlogin" >Log out</a></li>
+                 <?php endif;?>
             </ul>
             <!-- <button type="submit" class="btn btn-primary">Cart</button> -->
 

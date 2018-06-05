@@ -27,37 +27,28 @@
         <button class="send-email">Заказать</button>
     </p>
 </div> -->
-<br><br><br>
+<div class = "container purchase clearfix">
 <!-- <form action = "mail.php" method="POST"> -->
-<div>
+<?php  if(!isset($_SESSION['user'])): ?>
+<!-- <form method="POST" action="/fastBuy"> -->
+
+<h3>Please, enter data. We will contact you later.</h3><br>
     <label for="">Name </label>
     <input id="ename" required type="text" class="form-control input" name="name" placeholder="Enter name">
     <br>
-    <label for="">Surname</label>
-    <input id="esurname" required type="text" class="form-control input" name="surname" placeholder="Enter surname">
-    <br>
-    <label for="">Fathers name</label>
-    <input id="efathersName" required type="text" class="form-control input" name="fathersName" placeholder="Enter fathers name">
-    <br>
-
-    <label for="">Email</label>
-    <input id="email" required type="email" class="form-control input" name="email" placeholder="Enter email">
-    <br>
-
     <label for="">Phone number</label>
-    <input id="ephone" required type="tel" class="form-control input" name="ephoneNunmber" placeholder="Enter phone number">
+    <input id="ephone" required type="tel" class="form-control input" name="phoneNumber" placeholder="Enter phone number">
     <br>
-
-    <label for="">Adress</label>
-    <input id="eadress" required type="text" class="form-control input" name="adress" placeholder="Enter adress">
-    <br>
-    <button  class="btn btn-info add-button send-email ">Buy</button>
+    <button  class="btn fastBuy">Buy</button><br><br>
     <!-- onclick="return confirm('Alert!?')" -->
 <!-- </form> -->
+
+<!-- </form> -->
+<?php endif; ?>
+<?php  if(isset($_SESSION['user'])): ?>
+    <button  class="btn buy">Buy</button><br><br>
+    <?php endif; ?>
 </div>
-
-
-
 <script src="scripts/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="/scripts/cart.js"></script>
 <link rel="stylesheet" type="text/css" href="/styles/cart.css">
