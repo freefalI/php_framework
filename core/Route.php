@@ -45,8 +45,8 @@ class Route
     }
 
     private static function runDefaultController(){
-        require "app/controllers/Main.php";
-        $controller = new Main;
+        require "app/controllers/MainController.php";
+        $controller = new MainController;
         $controller->index();
     }
     private static function redirectHome(){

@@ -11,25 +11,4 @@ switch ($action) {
     case 'initProducts':
         initProducts();
         break;
-    case 'fastBuy':
-        fastBuy();
-        break;
-    case 'initCategories':
-        initCategories();
-        break;
-    case 'selectOneGoods':
-        selectOneGoods();
-        break;
-    case 'selectCategory':
-        selectCategory();
-        break;
-    case 'addOrUpdateItem':
-        addOrUpdateItem();
-        break;
-    case 'AddNewProduct':
-        AddNewProduct();
-        break;
-//    case 2:
-//        echo "i равно 2";
-//        break;
 }

@@ -61,7 +61,13 @@
             <div class="col col-sm-6  col-md-4 col-lg-3 container-item"> 
             <a href="/product/{{$product->id}}" class="cat-link"><img class ="image" src="{{$product->img_path;}}" alt="image"> </a>  
             <!-- <img class ="iii" src="vendor/images/1" alt="image"  >     -->
-           <a href="/product/{{$product->id}}" class="cat-link"> <h3 id="goods-name" >{{$product->category . " " . $product->brand .  " " . $product->model}}</h3></a>
+           <a href="/product/{{$product->id}}" class="cat-link"> <h3 id="goods-name" >
+               @if(strcmp($product->category,"Shirts")):
+                {{$product->category . " " . $product->brand .  " " . $product->model}}</h3></a>
+                @else:
+                Shirt{{" " . $product->brand .  " " . $product->model}}</h3></a>
+               
+                @endif;
             <!-- <p>Lorem ipsum dolor..</p> -->
             <p id="price">${{$product->price}}</p>
             <!-- <img id="add-to-cart-img" class = "add-to-cart" src="vendor/cart-image.png" alt="" data-id={{$product->id}}> -->

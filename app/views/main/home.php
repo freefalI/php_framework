@@ -62,7 +62,7 @@
 
 <!-- <div style="clear: both;"></div> -->
 
-<div class="container goods-example">
+<div class=" goods-example">
 
     <img id="levis-logo" src="/vendor/levis.png" alt="Levis">
 

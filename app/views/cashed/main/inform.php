@@ -7,7 +7,13 @@
 </div>
 
 <div class="right">
-    <p id = "inf-title"><?= $product->category . " " . $product->brand . " " . $product->model ?></p>
+               
+    <p id = "inf-title">
+    <?php if(strcmp($product->category,"Shirts")): ?>
+                <?= $product->category . " " . $product->brand .  " " . $product->model ?></p>
+                <?php else: ?>
+                    Shirt<?= " " . $product->brand . " " . $product->model ?></p>
+                <?php endif; ?>
     <hr>
     <p id = "inf-price">$<?= $product->price ?></p>
     <p class =  "inf-info">Articul: #4567</p>

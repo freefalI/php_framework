@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zebra shop</title>
-
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <link href="https://fonts.googleapis.com/css?family=Holtwood+One+SC" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
@@ -71,9 +71,11 @@
                 <li class="nav-item"> <a class="nav-link" href ="/authorisation" >Log in</a></li>
                 <?php endif;?>
                 <?php if(isset($_SESSION['user'])):?>
-                <p><?=$_SESSION['user']->email?></p>
-                <p> <?=$_SESSION['user']->name?></p>
-                <p> <?=$_SESSION['user']->surname?></p>
+                <li class=" aut">
+                <span id="aut-e"><?=$_SESSION['user']->email?></span>
+                <!-- <br><br> -->
+                <span id="aut-n"> <?=$_SESSION['user']->name?><?=$_SESSION['user']->surname?></span>
+                </li>
                 <li class="nav-item"> <a  class="nav-link" href ="/unlogin" >Log out</a></li>
                  <?php endif;?>
             </ul>

@@ -15,7 +15,6 @@ function loadCart() {
                 goods = JSON.parse(data);
                 showCart();
                 init();
-                // $('.fastBuy').on('click', fastBuy); 
             });
     }
     else {
@@ -28,27 +27,13 @@ function showCart() {
     if (!isEmpty(cart)) {
         $('#cart').html('<h2>Cart is empty!</h2>');
     }
-    // else {
-    //         var out = '';
-    //         for (var id in cart) {
-    //             out += `<div class = "cart-item" ><button data-id="${id}" class="del-goods"><i class="fas fa-times"></i></button>`;
-    //             out += `<img class ='cart-item-image' src="${goods[id].img_path}">`;
-    //             // out += ` ${goods[id].id_category  }`;
-    //             out += ` ${goods[id].brand  }`;
-    //             out += ` ${goods[id].model  }`;
-    //             out += ` ${goods[id].price  }`;
-    //             out += `  <button data-id="${id}" class="minus-goods">-</button>  `;
-    //             out += ` ${cart[id]}  `;
-    //             out += `  <button data-id="${id}" class="plus-goods">+</button>  `;
-    //             out += cart[id]*goods[id].price;
-    //             out += '</div><br>';
-    //         }
+
     else {
         var out = '';
         var out2 = '';
-        var amount=0;
+        var amount = 0;
         for (var id in cart) {
-            out +=`
+            out += `
                 <article class="product">
                     <header>
                         <a class="remove" data-id="${id}" >
@@ -71,7 +56,7 @@ function showCart() {
                         <span data-id="${id}" class="qt-plus">+</span>
 
                         <h2 class="full-price">
-                            ${cart[id]*goods[id].price}€
+                            ${cart[id] * goods[id].price}€
                         </h2>
 
                         <h2 class="price">
@@ -79,12 +64,12 @@ function showCart() {
                         </h2>
                     </footer>
                 </article>`
-                
 
-            amount+=cart[id]*goods[id].price;
+
+            amount += cart[id] * goods[id].price;
 
         }
-        out2+=`
+        out2 += `
             <div class="container clearfix">
             <div class="left">
                 <h1 class="total">Total:
@@ -95,50 +80,11 @@ function showCart() {
             </div>
             </div> `;
 
-
-    
-        // $('.main-cart').html(out);
-        // $('.del-goods').on('click', delGoods);
-        // $('.plus-goods').on('click', plusGoods);
-        // $('.minus-goods').on('click', minusGoods);
-
         $('#cart').html(out);
         $('#footer-cart').html(out2);
-        // $('.remove').on('click', delGoods);
-        // $('.qt-plus').on('click', plusGoods);
-        // $('.qt-minus').on('click', minusGoods);
+
     }
 }
-
-// function delGoods() {
-//     //удаляем товар из корзины
-//     var id = $(this).attr('data-id');
-//     delete cart[id];
-//     saveCart();
-//     showCart();
-// }
-
-// function plusGoods() {
-//     //добавляет товар в корзине
-//     var id = $(this).attr('data-id');
-//     cart[id]++;
-//     saveCart();
-//     showCart();
-// }
-// function minusGoods() {
-//     //уменьшаем товар в корзине
-//     var id = $(this).attr('data-id');
-//     if (cart[id] == 1) {
-//         delete cart[id];
-//     }
-//     else {
-//         cart[id]--;
-//     }
-
-//     saveCart();
-//     showCart();
-// }
-
 
 function saveCart() {
     //сохраняю корзину в localStorage
@@ -153,17 +99,16 @@ function isEmpty(object) {
 }
 
 (function () {
-    
+
     loadCart();
-    
-    $('.fastBuy').on('click', fastBuy); 
-    $('.Buy').on('click', Buy); 
+
+    $('.fastBuy').on('click', fastBuy);
+    $('.buy').on('click', Buy);
     // $('.send-email').on('click', sendEmail); // отправить письмо с заказом
     //  });
 })();
 
-function fastBuy(){
-    alert("adadgr");
+function fastBuy() {
     var name = $('#ename').val();
     var phoneNumber = $('#ephone').val();
     if (isEmpty(cart)) {
@@ -175,8 +120,15 @@ function fastBuy(){
                 "phoneNumber": phoneNumber,
                 "cart": cart,
                 "goods": goods,
-            },function(data){
-                console.log(data);
+            }, function (data) {
+                if (data == 1) {
+                    alert('Заказ отправлен');
+               
+                    window.location.reload();
+                }
+                else {
+                    alert('Повторите заказ');
+                }
             }
         );
     }
@@ -185,7 +137,7 @@ function fastBuy(){
     }
 }
 
-function Buy(){
+function Buy() {
     if (isEmpty(cart)) {
         $.post(
             "/buy",
@@ -193,8 +145,14 @@ function Buy(){
                 // "action" :'fastBuy',
                 "cart": cart,
                 "goods": goods,
-            },function(data){
-                console.log(data);
+            }, function (data) {
+                if (data == 1) {
+                    alert('Заказ отправлен');
+                    window.location.reload();
+                }
+                else {
+                    alert('Повторите заказ');
+                }
             }
         );
     }
@@ -204,7 +162,7 @@ function Buy(){
 }
 function sendEmail() {
     var name = $('#ename').val();
-    var surname  = $('#esurname').val();
+    var surname = $('#esurname').val();
     var fathersName = $('#efathersName').val();
     var email = $('#email').val();
     var phoneNumber = $('#ephone').val();
@@ -239,37 +197,6 @@ function sendEmail() {
     else {
         alert('Корзина пуста');
     }
-    // var ename = $('#ename').val();
-    // var email = $('#email').val();
-    // var ephone = $('#ephone').val();
-    // if (ename != '' && email != '' && ephone != '') {
-    //     if (isEmpty(cart)) {
-    //         $.post(
-    //             "mail.php",
-    //             {
-    //                 "ename": ename,
-    //                 "email": email,
-    //                 "ephone": ephone,
-    //                 "cart": cart,
-    //                 "goods": goods
-    //             },
-    //             function (data) {
-    //                 if (data == 1) {
-    //                     alert('Заказ отправлен');
-    //                 }
-    //                 else {
-    //                     alert('Повторите заказ');
-    //                 }
-    //             }
-    //         );
-    //     }
-    //     else {
-    //         alert('Корзина пуста');
-    //     }
-    // }
-    // else {
-    //     alert('Заполните поля');
-    // }
 
 }
 
@@ -309,16 +236,16 @@ function changeTotal() {
     $(".total span").html(price);
     $(".total2").html(price);
 }
-function updateNumberInHeader(){
+function updateNumberInHeader() {
     var n = 0;
-    for (var key in cart){
-        n+=cart[key];
+    for (var key in cart) {
+        n += cart[key];
     }
     $('#amount').html(n);
 }
 // $(document).ready(function () {
-    function init(){
-    
+function init() {
+
     $(".remove").click(function () {
         var id = $(this).attr('data-id');
         delete cart[id];
@@ -326,8 +253,8 @@ function updateNumberInHeader(){
         updateNumberInHeader();
         $("#amount").css("background", "#05b5a9");
         $("#amount").css("color", "#fff");
-        window.setTimeout(function () {  $("#amount").css("background", "none") }, 500);
-        window.setTimeout(function () {  $("#amount").css("color", "black") }, 500);
+        window.setTimeout(function () { $("#amount").css("background", "none") }, 500);
+        window.setTimeout(function () { $("#amount").css("color", "black") }, 500);
         var el = $(this);
         el.parent().parent().addClass("removed");
         window.setTimeout(
@@ -345,7 +272,7 @@ function updateNumberInHeader(){
                 });
             }, 200);
     });
-    
+
     $(".qt-plus").click(function () {
         var id = $(this).attr('data-id');
         cart[id]++;
@@ -353,8 +280,8 @@ function updateNumberInHeader(){
         updateNumberInHeader();
         $("#amount").css("background", "#05b5a9");
         $("#amount").css("color", "#fff");
-        window.setTimeout(function () {  $("#amount").css("background", "none") }, 500);
-        window.setTimeout(function () {  $("#amount").css("color", "black") }, 500);
+        window.setTimeout(function () { $("#amount").css("background", "none") }, 500);
+        window.setTimeout(function () { $("#amount").css("color", "black") }, 500);
 
         $(this).parent().children(".qt").html(parseInt($(this).parent().children(".qt").html()) + 1);
 
@@ -363,20 +290,20 @@ function updateNumberInHeader(){
         var el = $(this);
         window.setTimeout(function () { el.parent().children(".full-price").removeClass("added"); changeVal(el); }, 150);
     });
-   function updateNumberInHeader(){
-    var n = 0;
-    for (var key in cart){
-        n+=cart[key];
+    function updateNumberInHeader() {
+        var n = 0;
+        for (var key in cart) {
+            n += cart[key];
+        }
+        $('#amount').html(n);
     }
-    $('#amount').html(n);
-}
     $(".qt-minus").click(function () {
         var id = $(this).attr('data-id');
         child = $(this).parent().children(".qt");
 
         if (parseInt(child.html()) > 1) {
             child.html(parseInt(child.html()) - 1);
-            
+
         }
         if (cart[id] > 1) {
             cart[id]--;
@@ -385,15 +312,15 @@ function updateNumberInHeader(){
         updateNumberInHeader();
         $("#amount").css("background", "#05b5a9");
         $("#amount").css("color", "#fff");
-        window.setTimeout(function () {  $("#amount").css("background", "none") }, 500);
-        window.setTimeout(function () {  $("#amount").css("color", "black") }, 500);
+        window.setTimeout(function () { $("#amount").css("background", "none") }, 500);
+        window.setTimeout(function () { $("#amount").css("color", "black") }, 500);
 
         $(this).parent().children(".full-price").addClass("minused");
 
         var el = $(this);
         window.setTimeout(function () { el.parent().children(".full-price").removeClass("minused"); changeVal(el); }, 150);
     });
-    
+
 
     window.setTimeout(function () { $(".is-open").removeClass("is-open") }, 1200);
 
@@ -401,6 +328,6 @@ function updateNumberInHeader(){
         check = true;
         $(".remove").click();
     });
-    
-// });
-    }
+
+    // });
+}
